@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import { ParticleMotif } from '@/components/ParticleMotif';
-import { ArrowRight, Cpu, Network, CheckCircle2, Bot, Layers, MessageCircle, Mail, Linkedin, Calendar, Search, ClipboardList, Hammer, Rocket, TrendingUp } from 'lucide-react';
+import { ArrowRight, Cpu, Network, CheckCircle2, Bot, Layers, MessageCircle, Mail, Search, ClipboardList, Hammer, Rocket, TrendingUp } from 'lucide-react';
 import { useState } from 'react';
 
 const fadeIn = {
@@ -272,13 +272,11 @@ export function Home() {
             initial="initial"
             whileInView="whileInView"
             viewport={{ once: true, margin: "-100px" }}
-            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-16"
+            className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-16 max-w-2xl mx-auto"
           >
             {[
-              { icon: <Mail className="w-5 h-5 text-primary" />, label: "Email", value: "hello@novus.agency", href: "mailto:hello@novus.agency" },
-              { icon: <MessageCircle className="w-5 h-5 text-primary" />, label: "WhatsApp", value: "+00 000 0000000", href: "https://wa.me/10000000000" },
-              { icon: <Linkedin className="w-5 h-5 text-primary" />, label: "LinkedIn", value: "/company/novus", href: "https://linkedin.com/company/novus" },
-              { icon: <Calendar className="w-5 h-5 text-primary" />, label: "Calendly", value: "Book a slot", href: "https://calendly.com/novus-agency" },
+              { icon: <Mail className="w-5 h-5 text-primary" />, label: "Email", value: "novus.ai.automation@gmail.com", href: "mailto:novus.ai.automation@gmail.com" },
+              { icon: <MessageCircle className="w-5 h-5 text-primary" />, label: "WhatsApp", value: "0329-9615669", href: "https://wa.me/923299615669" },
             ].map((card, i) => (
               <motion.a
                 key={i}
