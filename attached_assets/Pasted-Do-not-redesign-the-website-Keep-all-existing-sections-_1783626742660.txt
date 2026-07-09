@@ -1,0 +1,95 @@
+Do not redesign the website.
+
+Keep all existing sections, colors, typography, animations, particles, and layout.
+
+=================================================
+OPENING LOGO ANIMATION
+=================================================
+
+When the website first loads:
+
+1. Display the NOVUS logo in the center of the screen.
+2. The logo should be significantly larger than the navigation logo.
+3. The animated "O" should retain its existing particle/motion effect.
+4. The logo should feel premium, futuristic, and elegant.
+5. Use a subtle fade-in and scale animation.
+6. Keep animation duration between 2-3 seconds.
+7. After the animation completes:
+   - Smoothly fade the logo out
+   - Reveal the website content underneath
+   - Transition should feel seamless and premium
+
+Do NOT use flashy effects.
+Avoid excessive motion.
+Keep it minimal and modern.
+
+=================================================
+LAYOUT IMPROVEMENTS
+=================================================
+
+Perform a full layout audit.
+
+Ensure:
+
+- No text overlaps
+- No buttons overlap
+- No elements extend outside containers
+- No content is cut off on mobile
+- No excessive spacing
+- No crowding between sections
+- Consistent margins throughout site
+- Consistent padding throughout site
+- Proper alignment of all cards
+- Equal card heights where appropriate
+- Responsive layout for desktop, tablet, and mobile
+
+=================================================
+TYPOGRAPHY IMPROVEMENTS
+=================================================
+
+Reduce typography slightly:
+
+- Hero headline: 15-20% smaller
+- Body text: 10% smaller
+- Improve line spacing
+- Improve readability
+- Prevent awkward line breaks
+
+Example:
+
+Current:
+AI Automations
+That
+Actually Save Time
+
+Desired:
+AI Automations That
+Actually Save Time
+
+or
+
+AI Automations
+That Actually Save Time
+
+Use whichever layout looks most balanced.
+
+=================================================
+RESPONSIVE OPTIMIZATION
+=================================================
+
+Test and optimize for:
+
+Desktop
+Laptop
+Tablet
+Mobile
+
+Ensure every section remains visually balanced.
+
+=================================================
+FINAL GOAL
+=================================================
+
+The website should feel like a premium AI automation agency website similar to modern SaaS and AI companies.
+
+The large animated NOVUS logo intro should create a memorable first impression while maintaining a clean, professional experience.

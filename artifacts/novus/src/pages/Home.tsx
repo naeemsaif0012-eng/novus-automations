@@ -51,7 +51,7 @@ export function Home() {
               Accepting New Projects
             </div>
             
-            <h1 className="text-5xl md:text-7xl lg:text-8xl font-medium tracking-tight mb-8 leading-[1.1]">
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-medium tracking-tight mb-8 leading-[1.15]">
               AI Automations That <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-white to-white/40">Actually Save Time.</span>
             </h1>
@@ -61,7 +61,7 @@ export function Home() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] as [number, number, number, number] }}
-            className="text-lg md:text-xl text-muted-foreground max-w-2xl font-light mb-12 leading-relaxed"
+            className="text-base md:text-lg text-muted-foreground max-w-2xl font-light mb-12 leading-relaxed"
           >
             NOVUS builds AI agents, automations, and intelligent systems that eliminate repetitive work, reduce operational overhead, and help businesses scale efficiently.
           </motion.p>
@@ -206,7 +206,7 @@ export function Home() {
         <div className="max-w-4xl mx-auto px-6 md:px-12 relative z-10">
           <motion.div {...fadeIn}>
             <h2 className="text-3xl md:text-5xl font-medium tracking-tight mb-10">About NOVUS</h2>
-            <div className="space-y-6 text-lg text-muted-foreground leading-relaxed font-light">
+            <div className="space-y-6 text-base md:text-lg text-muted-foreground leading-relaxed font-light">
               <p><span className="text-foreground">NOVUS</span> is an AI Automation Agency focused on helping businesses streamline operations through AI agents, workflow automation, and custom integrations.</p>
               <p>
                 Our team designs and deploys AI agents, workflow automations, and intelligent business systems that help businesses eliminate repetitive work and operate more efficiently.
