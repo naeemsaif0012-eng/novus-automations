@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import { ParticleMotif } from '@/components/ParticleMotif';
-import { ArrowRight, Cpu, Network, Zap, CheckCircle2, Bot, Layers } from 'lucide-react';
+import { ArrowRight, Cpu, Network, CheckCircle2, Bot, Layers, MessageCircle, Mail, Linkedin, Calendar, Search, ClipboardList, Hammer, Rocket, TrendingUp } from 'lucide-react';
 import { useState } from 'react';
 
 const fadeIn = {
@@ -48,12 +48,12 @@ export function Home() {
           >
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-white/10 bg-white/5 text-xs font-mono uppercase tracking-widest mb-8 text-primary backdrop-blur-sm">
               <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
-              Accepting New Partners
+              Accepting New Projects
             </div>
             
             <h1 className="text-5xl md:text-7xl lg:text-8xl font-medium tracking-tight mb-8 leading-[1.1]">
-              Frictionless <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-white to-white/40">Operations.</span>
+              AI Automations That <br />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-white to-white/40">Actually Save Time.</span>
             </h1>
           </motion.div>
 
@@ -63,7 +63,7 @@ export function Home() {
             transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] as [number, number, number, number] }}
             className="text-lg md:text-xl text-muted-foreground max-w-2xl font-light mb-12 leading-relaxed"
           >
-            We engineer autonomous workflows and AI agents for businesses that refuse to scale on human effort. Precise. Invisible. Inevitable.
+            I build AI agents, automations, and intelligent systems that eliminate repetitive work, reduce operational overhead, and help businesses scale efficiently.
           </motion.p>
 
           <motion.div 
@@ -73,30 +73,12 @@ export function Home() {
             className="flex flex-col sm:flex-row gap-6"
           >
             <Button size="lg" onClick={() => document.getElementById('contact')?.scrollIntoView({behavior: 'smooth'})}>
-              Initiate System <ArrowRight className="ml-2 w-4 h-4" />
+              Book a Discovery Call <ArrowRight className="ml-2 w-4 h-4" />
             </Button>
-            <Button size="lg" variant="outline" onClick={() => document.getElementById('services')?.scrollIntoView({behavior: 'smooth'})}>
-              View Architecture
+            <Button size="lg" variant="outline" onClick={() => document.getElementById('projects')?.scrollIntoView({behavior: 'smooth'})}>
+              View Projects
             </Button>
           </motion.div>
-        </div>
-      </section>
-
-      {/* CLIENT / LOGO CLOUD - ABSTRACT */}
-      <section className="py-12 border-y border-white/5 bg-white/[0.01]">
-        <div className="max-w-7xl mx-auto px-6 flex flex-col items-center">
-          <p className="text-xs font-mono uppercase tracking-widest text-muted-foreground mb-8">Systems deployed for forward-thinking nodes</p>
-          <div className="flex flex-wrap justify-center gap-12 md:gap-24 opacity-40 grayscale transition-all hover:grayscale-0">
-            {/* Placeholder abstract logos for tech vibe */}
-            {['Nexus', 'Aura', 'Vertex', 'Quant', 'Stratos'].map((name, i) => (
-              <div key={i} className="flex items-center gap-2 font-mono text-lg font-bold tracking-widest">
-                <div className="w-6 h-6 border-2 border-current rounded-sm transform rotate-45 flex items-center justify-center">
-                  <div className="w-2 h-2 bg-current" />
-                </div>
-                {name}
-              </div>
-            ))}
-          </div>
         </div>
       </section>
 
@@ -104,9 +86,9 @@ export function Home() {
       <section id="services" className="py-32 relative">
         <div className="max-w-7xl mx-auto px-6 md:px-12">
           <motion.div {...fadeIn} className="mb-20">
-            <h2 className="text-3xl md:text-5xl font-medium tracking-tight mb-6">Capabilities</h2>
+            <h2 className="text-3xl md:text-5xl font-medium tracking-tight mb-6">Services</h2>
             <p className="text-muted-foreground font-mono text-sm max-w-xl uppercase tracking-widest leading-relaxed">
-              We replace brittle manual processes with robust, self-healing automated architectures.
+              Custom AI systems designed to automate operations and increase efficiency.
             </p>
           </motion.div>
 
@@ -119,24 +101,24 @@ export function Home() {
           >
             {[
               {
-                icon: <Network className="w-6 h-6 text-primary" />,
-                title: "Workflow Orchestration",
-                desc: "Complex data pipelines built on n8n and Make. We connect isolated software silos into unified neural networks that run without supervision."
+                icon: <Bot className="w-6 h-6 text-primary" />,
+                title: "AI Agents",
+                items: ["Research agents", "Admin assistants", "Customer support agents", "Knowledge assistants"]
               },
               {
-                icon: <Bot className="w-6 h-6 text-primary" />,
-                title: "Autonomous Agents",
-                desc: "LLM-driven entities that read, think, and execute. From customer success triage to deep-research content generation."
+                icon: <Network className="w-6 h-6 text-primary" />,
+                title: "Workflow Automation",
+                items: ["n8n workflows", "Make.com automations", "CRM automation", "Lead routing"]
+              },
+              {
+                icon: <MessageCircle className="w-6 h-6 text-primary" />,
+                title: "AI Chatbots",
+                items: ["Website chatbots", "Support bots", "FAQ assistants", "Lead qualification bots"]
               },
               {
                 icon: <Layers className="w-6 h-6 text-primary" />,
                 title: "Custom Integrations",
-                desc: "API bridging and webhook management for legacy systems. If it has an endpoint, we can make it talk to the rest of your stack."
-              },
-              {
-                icon: <Zap className="w-6 h-6 text-primary" />,
-                title: "Operational Audits",
-                desc: "We analyze your team's friction points and map out an automation blueprint to reclaim thousands of hours per quarter."
+                items: ["API integrations", "Webhooks", "Database connections", "Software integrations"]
               }
             ].map((service, i) => (
               <motion.div 
@@ -148,163 +130,173 @@ export function Home() {
                   {service.icon}
                 </div>
                 <h3 className="text-xl font-medium mb-4">{service.title}</h3>
-                <p className="text-muted-foreground leading-relaxed">{service.desc}</p>
-              </motion.div>
-            ))}
-          </motion.div>
-        </div>
-      </section>
-
-      {/* PORTFOLIO / WORK SECTION */}
-      <section id="work" className="py-32 bg-secondary/10 relative overflow-hidden">
-        <ParticleMotif className="top-0 right-0 translate-x-1/3 -translate-y-1/3 w-[600px] h-[600px] opacity-10" count={40} />
-        <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
-          <motion.div {...fadeIn} className="mb-20">
-            <h2 className="text-3xl md:text-5xl font-medium tracking-tight mb-6">Deployed Systems</h2>
-            <p className="text-muted-foreground font-mono text-sm max-w-xl uppercase tracking-widest leading-relaxed">
-              Illustrative case studies -- placeholder projects demonstrating the class of problem we solve.
-            </p>
-          </motion.div>
-
-          <div className="flex flex-col gap-12">
-            {[
-              {
-                client: "Client Alpha",
-                title: "E-commerce Fulfillment Engine",
-                metric: "94%",
-                metricDesc: "Reduction in manual entry",
-                details: "Replaced a 3-person data entry team with an n8n pipeline that processes orders, verifies inventory across 4 warehouses, and routes complex shipping logic in real-time."
-              },
-              {
-                client: "Startup Beta",
-                title: "Autonomous CS Agent",
-                metric: "60%",
-                metricDesc: "Tier-1 ticket resolution",
-                details: "Deployed an OpenAI-powered agent connected to Zendesk and internal docs. It reads context, suggests refunds, and executes API calls for approved actions."
-              },
-              {
-                client: "Agency Gamma",
-                title: "Content Pipeline Automation",
-                metric: "10x",
-                metricDesc: "Output speed multiplier",
-                details: "Built a fully autonomous system that takes brief inputs, generates drafts via LLM, pulls reference imagery, and stages everything in Webflow for final human review."
-              }
-            ].map((work, i) => (
-              <motion.div 
-                key={i}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-100px" }}
-                transition={{ duration: 0.7, delay: i * 0.1 }}
-                className="group flex flex-col lg:flex-row border border-white/5 bg-background rounded-sm overflow-hidden hover:border-white/20 transition-all duration-500"
-              >
-                <div className="p-10 lg:w-1/3 border-b lg:border-b-0 lg:border-r border-white/5 bg-secondary/30 flex flex-col justify-center">
-                  <span className="font-mono text-[10px] text-muted-foreground/70 uppercase tracking-widest mb-2 border border-white/10 rounded-sm px-2 py-1 w-fit">Placeholder Project</span>
-                  <span className="font-mono text-xs text-primary uppercase tracking-widest mb-4">{work.client}</span>
-                  <div className="text-6xl font-medium tracking-tighter mb-2">{work.metric}</div>
-                  <div className="text-sm font-mono text-muted-foreground uppercase tracking-wider">{work.metricDesc}</div>
-                </div>
-                <div className="p-10 lg:w-2/3 flex flex-col justify-center">
-                  <h3 className="text-2xl font-medium mb-4">{work.title}</h3>
-                  <p className="text-muted-foreground leading-relaxed max-w-2xl text-lg">{work.details}</p>
-                  <div className="mt-8 flex items-center gap-4 text-sm font-mono text-muted-foreground uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-opacity translate-y-2 group-hover:translate-y-0 duration-300">
-                    <span className="w-8 h-[1px] bg-primary"></span>
-                    System Active
-                  </div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* PRICING SECTION */}
-      <section id="pricing" className="py-32 relative">
-        <div className="max-w-7xl mx-auto px-6 md:px-12">
-          <motion.div {...fadeIn} className="mb-20 text-center flex flex-col items-center">
-            <h2 className="text-3xl md:text-5xl font-medium tracking-tight mb-6">Investment</h2>
-            <p className="text-muted-foreground font-mono text-sm max-w-xl uppercase tracking-widest leading-relaxed">
-              Transparent scaling for operational dominance. Placeholder pricing for demonstration.
-            </p>
-          </motion.div>
-
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            {[
-              { 
-                name: "Sprint", 
-                price: "$2k+", 
-                desc: "Targeted workflow automation.", 
-                features: ["1 Core Workflow", "n8n / Make Setup", "Basic Error Handling", "2 Weeks Delivery"],
-                highlighted: false
-              },
-              { 
-                name: "System", 
-                price: "$6k+", 
-                desc: "Autonomous agent integration.", 
-                features: ["Custom AI Agent", "Multi-platform Integration", "Advanced Fallbacks", "4 Weeks Delivery"], 
-                highlighted: true 
-              },
-              { 
-                name: "Scale", 
-                price: "Custom", 
-                desc: "Retained operational partner.", 
-                features: ["Unlimited Automations", "Dedicated Engineers", "24/7 Monitoring", "Continuous Optimization"],
-                highlighted: false
-              },
-            ].map((tier, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-100px" }}
-                transition={{ duration: 0.6, delay: i * 0.15 }}
-                className={`relative p-10 border rounded-sm flex flex-col ${
-                  tier.highlighted 
-                    ? 'border-primary bg-primary/5 shadow-[0_0_30px_rgba(147,51,234,0.1)] lg:-translate-y-4' 
-                    : 'border-white/5 bg-secondary/20'
-                }`}
-              >
-                {tier.highlighted && (
-                  <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 px-4 py-1 bg-primary text-primary-foreground text-xs font-mono uppercase tracking-widest rounded-sm">
-                    Recommended Node
-                  </div>
-                )}
-                
-                <h3 className="text-2xl font-medium mb-2">{tier.name}</h3>
-                <p className="text-muted-foreground text-sm h-10">{tier.desc}</p>
-                
-                <div className="my-8 pb-8 border-b border-white/5">
-                  <span className="text-4xl font-medium tracking-tight">{tier.price}</span>
-                  {tier.price !== "Custom" && <span className="text-muted-foreground font-mono text-sm ml-2">/ project</span>}
-                </div>
-
-                <ul className="flex-1 space-y-4 mb-8">
-                  {tier.features.map((feature, idx) => (
-                    <li key={idx} className="flex items-start gap-3 text-sm text-foreground/80">
-                      <CheckCircle2 className="w-5 h-5 text-primary shrink-0" />
-                      <span>{feature}</span>
+                <ul className="space-y-2">
+                  {service.items.map((item, idx) => (
+                    <li key={idx} className="text-muted-foreground leading-relaxed flex items-center gap-2">
+                      <span className="w-1 h-1 rounded-full bg-primary shrink-0" />
+                      {item}
                     </li>
                   ))}
                 </ul>
-
-                <Button 
-                  variant={tier.highlighted ? "primary" : "outline"} 
-                  className="w-full"
-                  onClick={() => document.getElementById('contact')?.scrollIntoView({behavior: 'smooth'})}
-                >
-                  Select Tier
-                </Button>
               </motion.div>
             ))}
-          </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* PROJECTS SECTION */}
+      <section id="projects" className="py-32 bg-secondary/10 relative overflow-hidden">
+        <ParticleMotif className="top-0 right-0 translate-x-1/3 -translate-y-1/3 w-[600px] h-[600px] opacity-10" count={40} />
+        <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
+          <motion.div {...fadeIn} className="mb-20">
+            <h2 className="text-3xl md:text-5xl font-medium tracking-tight mb-6">Featured Projects</h2>
+            <p className="text-muted-foreground font-mono text-sm max-w-xl uppercase tracking-widest leading-relaxed">
+              Real automation solutions and AI systems.
+            </p>
+          </motion.div>
+
+          <motion.div 
+            variants={staggerContainer} 
+            initial="initial" 
+            whileInView="whileInView" 
+            viewport={{ once: true, margin: "-100px" }}
+            className="grid grid-cols-1 lg:grid-cols-3 gap-8"
+          >
+            {[
+              {
+                title: "AI Lead Qualification System",
+                stack: "OpenAI + n8n",
+                items: ["AI scores and routes leads", "CRM integration", "Automated follow-up sequencing"]
+              },
+              {
+                title: "Content Automation Workflow",
+                stack: "OpenAI + Notion + n8n",
+                items: ["Research automation", "Content generation", "Automated publishing pipeline"]
+              },
+              {
+                title: "Customer Support AI Assistant",
+                stack: "AI-powered support",
+                items: ["Handles repetitive questions", "Knowledge base integration", "Seamless human handoff"]
+              }
+            ].map((project, i) => (
+              <motion.div 
+                key={i}
+                variants={staggerItem}
+                className="group flex flex-col p-10 border border-white/5 bg-background rounded-sm hover:border-primary/30 transition-all duration-500"
+              >
+                <span className="font-mono text-xs text-primary uppercase tracking-widest mb-4">{project.stack}</span>
+                <h3 className="text-2xl font-medium mb-6">{project.title}</h3>
+                <ul className="flex-1 space-y-3">
+                  {project.items.map((item, idx) => (
+                    <li key={idx} className="flex items-start gap-3 text-sm text-muted-foreground leading-relaxed">
+                      <CheckCircle2 className="w-4 h-4 text-primary shrink-0 mt-0.5" />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </motion.div>
+            ))}
+          </motion.div>
+        </div>
+      </section>
+
+      {/* ABOUT SECTION */}
+      <section id="about" className="py-32 relative overflow-hidden">
+        <ParticleMotif className="bottom-0 left-0 -translate-x-1/3 translate-y-1/3 w-[600px] h-[600px] opacity-10" count={30} />
+        <div className="max-w-4xl mx-auto px-6 md:px-12 relative z-10">
+          <motion.div {...fadeIn}>
+            <h2 className="text-3xl md:text-5xl font-medium tracking-tight mb-10">About Me</h2>
+            <div className="space-y-6 text-lg text-muted-foreground leading-relaxed font-light">
+              <p>Hi, I'm <span className="text-foreground">Muhammad Naeem</span>.</p>
+              <p>
+                I specialize in building AI agents, workflow automations, and intelligent business systems that help businesses eliminate repetitive work and operate more efficiently.
+              </p>
+              <p>
+                Using tools like OpenAI, n8n, Make, APIs, and custom integrations, I create practical automation solutions that save time and deliver measurable business value.
+              </p>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* PROCESS SECTION */}
+      <section id="process" className="py-32 bg-secondary/10 relative">
+        <div className="max-w-7xl mx-auto px-6 md:px-12">
+          <motion.div {...fadeIn} className="mb-20">
+            <h2 className="text-3xl md:text-5xl font-medium tracking-tight mb-6">How I Work</h2>
+          </motion.div>
+
+          <motion.div 
+            variants={staggerContainer} 
+            initial="initial" 
+            whileInView="whileInView" 
+            viewport={{ once: true, margin: "-100px" }}
+            className="grid grid-cols-1 md:grid-cols-5 gap-8"
+          >
+            {[
+              { icon: <Search className="w-5 h-5 text-primary" />, step: "01", title: "Discovery", desc: "Identify bottlenecks and opportunities." },
+              { icon: <ClipboardList className="w-5 h-5 text-primary" />, step: "02", title: "Planning", desc: "Design automation architecture." },
+              { icon: <Hammer className="w-5 h-5 text-primary" />, step: "03", title: "Development", desc: "Build and test workflows." },
+              { icon: <Rocket className="w-5 h-5 text-primary" />, step: "04", title: "Deployment", desc: "Launch and integrate systems." },
+              { icon: <TrendingUp className="w-5 h-5 text-primary" />, step: "05", title: "Optimization", desc: "Monitor and improve performance." },
+            ].map((phase, i) => (
+              <motion.div key={i} variants={staggerItem} className="flex flex-col gap-4">
+                <div className="flex items-center gap-3">
+                  <div className="p-3 bg-background inline-flex rounded-sm border border-white/5">
+                    {phase.icon}
+                  </div>
+                  <span className="font-mono text-xs text-muted-foreground tracking-widest">{phase.step}</span>
+                </div>
+                <h3 className="text-lg font-medium">{phase.title}</h3>
+                <p className="text-muted-foreground text-sm leading-relaxed">{phase.desc}</p>
+              </motion.div>
+            ))}
+          </motion.div>
         </div>
       </section>
 
       {/* CONTACT SECTION */}
       <section id="contact" className="py-32 bg-secondary/10 relative overflow-hidden">
         <ParticleMotif className="bottom-0 left-0 -translate-x-1/3 translate-y-1/3 w-[800px] h-[800px] opacity-5" count={50} />
-        
-        <div className="max-w-4xl mx-auto px-6 relative z-10">
+
+        <div className="max-w-5xl mx-auto px-6 relative z-10">
+          <motion.div {...fadeIn} className="mb-16 text-center flex flex-col items-center">
+            <h2 className="text-3xl md:text-5xl font-medium tracking-tight mb-6">Let's Automate Your Business</h2>
+            <p className="text-muted-foreground font-mono text-sm max-w-xl uppercase tracking-widest leading-relaxed">
+              Ready to eliminate repetitive tasks and scale efficiently?
+            </p>
+          </motion.div>
+
+          <motion.div
+            variants={staggerContainer}
+            initial="initial"
+            whileInView="whileInView"
+            viewport={{ once: true, margin: "-100px" }}
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-16"
+          >
+            {[
+              { icon: <Mail className="w-5 h-5 text-primary" />, label: "Email", value: "your@email.com", href: "mailto:your@email.com" },
+              { icon: <MessageCircle className="w-5 h-5 text-primary" />, label: "WhatsApp", value: "+00 000 0000000", href: "https://wa.me/10000000000" },
+              { icon: <Linkedin className="w-5 h-5 text-primary" />, label: "LinkedIn", value: "/in/muhammad-naeem", href: "https://linkedin.com/in/muhammad-naeem" },
+              { icon: <Calendar className="w-5 h-5 text-primary" />, label: "Calendly", value: "Book a slot", href: "https://calendly.com/muhammad-naeem" },
+            ].map((card, i) => (
+              <motion.a
+                key={i}
+                href={card.href}
+                target={card.href.startsWith('http') ? '_blank' : undefined}
+                rel={card.href.startsWith('http') ? 'noopener noreferrer' : undefined}
+                variants={staggerItem}
+                className="flex flex-col items-center text-center gap-3 p-6 bg-background border border-white/5 rounded-sm hover:border-primary/30 transition-all duration-500"
+              >
+                <div className="p-3 bg-secondary/30 rounded-sm border border-white/5">
+                  {card.icon}
+                </div>
+                <span className="font-mono text-xs uppercase tracking-widest text-muted-foreground">{card.label}</span>
+                <span className="text-sm text-foreground/80">{card.value}</span>
+              </motion.a>
+            ))}
+          </motion.div>
+
           <motion.div 
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
@@ -317,25 +309,25 @@ export function Home() {
                 <div className="w-16 h-16 rounded-full bg-primary/20 flex items-center justify-center mb-6">
                   <CheckCircle2 className="w-8 h-8 text-primary" />
                 </div>
-                <h3 className="text-3xl font-medium mb-4">Transmission Received</h3>
+                <h3 className="text-3xl font-medium mb-4">Message Received</h3>
                 <p className="text-muted-foreground max-w-md mx-auto">
-                  Your inquiry has been logged. Our systems will route this to an engineer, and we will initiate contact shortly.
+                  Thanks for reaching out. I'll get back to you shortly to schedule your discovery call.
                 </p>
                 <Button className="mt-8" variant="outline" onClick={() => setFormSent(false)}>
-                  Reset Form
+                  Send Another Message
                 </Button>
               </div>
             ) : (
               <>
-                <h2 className="text-3xl md:text-4xl font-medium tracking-tight mb-4">Initialize Connection</h2>
+                <h2 className="text-3xl md:text-4xl font-medium tracking-tight mb-4">Book a Discovery Call</h2>
                 <p className="text-muted-foreground mb-10 max-w-lg">
-                  Detail the operational friction you wish to eliminate. We will architect a solution.
+                  Tell me about the repetitive work slowing your business down, and I'll outline how to automate it.
                 </p>
 
                 <form onSubmit={handleContactSubmit} className="space-y-6">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div className="space-y-2">
-                      <label className="text-xs font-mono uppercase tracking-widest text-muted-foreground">Entity Name</label>
+                      <label className="text-xs font-mono uppercase tracking-widest text-muted-foreground">Name</label>
                       <input 
                         required 
                         type="text" 
@@ -344,7 +336,7 @@ export function Home() {
                       />
                     </div>
                     <div className="space-y-2">
-                      <label className="text-xs font-mono uppercase tracking-widest text-muted-foreground">Comm Link</label>
+                      <label className="text-xs font-mono uppercase tracking-widest text-muted-foreground">Email</label>
                       <input 
                         required 
                         type="email" 
@@ -354,7 +346,7 @@ export function Home() {
                     </div>
                   </div>
                   <div className="space-y-2">
-                    <label className="text-xs font-mono uppercase tracking-widest text-muted-foreground">System Requirements / Friction Points</label>
+                    <label className="text-xs font-mono uppercase tracking-widest text-muted-foreground">What would you like to automate?</label>
                     <textarea 
                       required 
                       rows={5} 
@@ -363,7 +355,7 @@ export function Home() {
                     ></textarea>
                   </div>
                   <Button type="submit" size="lg" className="w-full sm:w-auto">
-                    Transmit Data <Cpu className="ml-2 w-4 h-4" />
+                    Book a Discovery Call <Cpu className="ml-2 w-4 h-4" />
                   </Button>
                 </form>
               </>

@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 export function Logo() {
   return (
     <div className="flex items-center text-foreground font-sans font-light tracking-[0.25em] text-xl select-none uppercase">
-      <span>N</span>
+      <span>M</span>
       <div className="relative w-7 h-7 mx-[0.1em] flex items-center justify-center">
         {/* Outer slow ring */}
         <motion.svg
@@ -47,7 +47,7 @@ export function Logo() {
           </g>
         </motion.svg>
       </div>
-      <span>VUS</span>
+      <span>N</span>
     </div>
   );
 }

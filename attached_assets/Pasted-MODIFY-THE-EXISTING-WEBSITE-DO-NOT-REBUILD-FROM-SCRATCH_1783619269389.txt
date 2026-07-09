@@ -1,0 +1,230 @@
+MODIFY THE EXISTING WEBSITE. DO NOT REBUILD FROM SCRATCH.
+
+KEEP:
+- Existing black/purple theme
+- Existing animations and particles
+- Existing typography
+- Existing button styles
+- Existing layout style
+- Existing premium futuristic aesthetic
+- Existing responsiveness
+
+REMOVE:
+- Pricing section
+- Placeholder projects
+- Fake client names
+- Fake statistics
+- Generic AI buzzwords
+- Any unnecessary filler content
+
+=================================================
+BRAND
+=================================================
+
+Name: Muhammad Naeem
+Title: AI Automation Specialist
+
+Focus:
+- AI Agents
+- n8n Automation
+- Make.com Automation
+- Workflow Automation
+- OpenAI Integrations
+- CRM Automation
+- Lead Generation Systems
+- Custom API Integrations
+
+Target Audience:
+SMEs, Agencies, Service Businesses, Startups
+
+=================================================
+NAVIGATION
+=================================================
+
+Home
+Services
+Projects
+About
+Contact
+
+CTA Button:
+"Book a Discovery Call"
+
+Smooth scrolling between sections.
+
+=================================================
+HERO SECTION
+=================================================
+
+Badge:
+"Accepting New Projects"
+
+Headline:
+"AI Automations That Actually Save Time"
+
+Subheadline:
+"I build AI agents, automations, and intelligent systems that eliminate repetitive work, reduce operational overhead, and help businesses scale efficiently."
+
+Buttons:
+Primary: Book a Discovery Call
+Secondary: View Projects
+
+=================================================
+SERVICES SECTION
+=================================================
+
+Title:
+Services
+
+Subtitle:
+Custom AI systems designed to automate operations and increase efficiency.
+
+Service 1:
+AI Agents
+- Research agents
+- Admin assistants
+- Customer support agents
+- Knowledge assistants
+
+Service 2:
+Workflow Automation
+- n8n workflows
+- Make.com automations
+- CRM automation
+- Lead routing
+
+Service 3:
+AI Chatbots
+- Website chatbots
+- Support bots
+- FAQ assistants
+- Lead qualification bots
+
+Service 4:
+Custom Integrations
+- API integrations
+- Webhooks
+- Database connections
+- Software integrations
+
+=================================================
+PROJECTS SECTION
+=================================================
+
+Title:
+Featured Projects
+
+Subtitle:
+Real automation solutions and AI systems.
+
+Project 1:
+AI Lead Qualification System
+- AI scores and routes leads
+- CRM integration
+- OpenAI + n8n
+
+Project 2:
+Content Automation Workflow
+- Research automation
+- Content generation
+- OpenAI + Notion + n8n
+
+Project 3:
+Customer Support AI Assistant
+- Handles repetitive questions
+- Knowledge base integration
+- AI-powered support
+
+IMPORTANT:
+Use clean project cards and make content easy to edit later.
+
+=================================================
+ABOUT SECTION
+=================================================
+
+Title:
+About Me
+
+Content:
+
+"Hi, I'm Muhammad Naeem.
+
+I specialize in building AI agents, workflow automations, and intelligent business systems that help businesses eliminate repetitive work and operate more efficiently.
+
+Using tools like OpenAI, n8n, Make, APIs, and custom integrations, I create practical automation solutions that save time and deliver measurable business value."
+
+=================================================
+PROCESS SECTION
+=================================================
+
+Title:
+How I Work
+
+1. Discovery
+Identify bottlenecks and opportunities.
+
+2. Planning
+Design automation architecture.
+
+3. Development
+Build and test workflows.
+
+4. Deployment
+Launch and integrate systems.
+
+5. Optimization
+Monitor and improve performance.
+
+=================================================
+CONTACT SECTION
+=================================================
+
+Title:
+Let's Automate Your Business
+
+Subtitle:
+Ready to eliminate repetitive tasks and scale efficiently?
+
+Include contact cards for:
+
+Email
+WhatsApp
+LinkedIn
+Calendly
+
+Use placeholders so I can update them later.
+
+CTA:
+Book a Discovery Call
+
+=================================================
+FOOTER
+=================================================
+
+Muhammad Naeem
+AI Automation Specialist
+
+Links:
+Home
+Services
+Projects
+About
+Contact
+
+Simple modern footer.
+
+=================================================
+DESIGN IMPROVEMENTS
+=================================================
+
+- Maintain existing luxury dark aesthetic
+- Improve readability
+- Improve mobile responsiveness
+- Add subtle hover animations
+- Strong CTA visibility
+- Professional section transitions
+- Clean spacing and alignment
+
+FINAL GOAL:
+
+Transform the current template into a premium personal AI Automation Consultant portfolio that feels professional, trustworthy, and focused on real business results instead of generic AI agency marketing.

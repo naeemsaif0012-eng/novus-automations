@@ -36,13 +36,15 @@ export function Navbar() {
         </a>
         
         <div className="hidden md:flex items-center gap-10 text-xs font-mono text-muted-foreground uppercase tracking-widest">
+          <button onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} className="hover:text-foreground transition-colors">Home</button>
           <button onClick={() => scrollTo('services')} className="hover:text-foreground transition-colors">Services</button>
-          <button onClick={() => scrollTo('work')} className="hover:text-foreground transition-colors">Work</button>
-          <button onClick={() => scrollTo('pricing')} className="hover:text-foreground transition-colors">Pricing</button>
+          <button onClick={() => scrollTo('projects')} className="hover:text-foreground transition-colors">Projects</button>
+          <button onClick={() => scrollTo('about')} className="hover:text-foreground transition-colors">About</button>
+          <button onClick={() => scrollTo('contact')} className="hover:text-foreground transition-colors">Contact</button>
         </div>
 
         <Button variant={scrolled ? "primary" : "outline"} size="sm" onClick={() => scrollTo('contact')}>
-          Initiate
+          Book a Discovery Call
         </Button>
       </div>
     </motion.nav>
