@@ -63,7 +63,7 @@ export function Home() {
             transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] as [number, number, number, number] }}
             className="text-lg md:text-xl text-muted-foreground max-w-2xl font-light mb-12 leading-relaxed"
           >
-            I build AI agents, automations, and intelligent systems that eliminate repetitive work, reduce operational overhead, and help businesses scale efficiently.
+            NOVUS builds AI agents, automations, and intelligent systems that eliminate repetitive work, reduce operational overhead, and help businesses scale efficiently.
           </motion.p>
 
           <motion.div 
@@ -205,14 +205,14 @@ export function Home() {
         <ParticleMotif className="bottom-0 left-0 -translate-x-1/3 translate-y-1/3 w-[600px] h-[600px] opacity-10" count={30} />
         <div className="max-w-4xl mx-auto px-6 md:px-12 relative z-10">
           <motion.div {...fadeIn}>
-            <h2 className="text-3xl md:text-5xl font-medium tracking-tight mb-10">About Me</h2>
+            <h2 className="text-3xl md:text-5xl font-medium tracking-tight mb-10">About NOVUS</h2>
             <div className="space-y-6 text-lg text-muted-foreground leading-relaxed font-light">
-              <p>Hi, I'm <span className="text-foreground">Muhammad Naeem</span>.</p>
+              <p><span className="text-foreground">NOVUS</span> is an AI Automation Agency focused on helping businesses streamline operations through AI agents, workflow automation, and custom integrations.</p>
               <p>
-                I specialize in building AI agents, workflow automations, and intelligent business systems that help businesses eliminate repetitive work and operate more efficiently.
+                Our team designs and deploys AI agents, workflow automations, and intelligent business systems that help businesses eliminate repetitive work and operate more efficiently.
               </p>
               <p>
-                Using tools like OpenAI, n8n, Make, APIs, and custom integrations, I create practical automation solutions that save time and deliver measurable business value.
+                Using tools like OpenAI, n8n, Make, APIs, and custom integrations, we build practical automation solutions that save time and deliver measurable business value.
               </p>
             </div>
           </motion.div>
@@ -223,7 +223,7 @@ export function Home() {
       <section id="process" className="py-32 bg-secondary/10 relative">
         <div className="max-w-7xl mx-auto px-6 md:px-12">
           <motion.div {...fadeIn} className="mb-20">
-            <h2 className="text-3xl md:text-5xl font-medium tracking-tight mb-6">How I Work</h2>
+            <h2 className="text-3xl md:text-5xl font-medium tracking-tight mb-6">How We Work</h2>
           </motion.div>
 
           <motion.div 
@@ -275,10 +275,10 @@ export function Home() {
             className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-16"
           >
             {[
-              { icon: <Mail className="w-5 h-5 text-primary" />, label: "Email", value: "your@email.com", href: "mailto:your@email.com" },
+              { icon: <Mail className="w-5 h-5 text-primary" />, label: "Email", value: "hello@novus.agency", href: "mailto:hello@novus.agency" },
               { icon: <MessageCircle className="w-5 h-5 text-primary" />, label: "WhatsApp", value: "+00 000 0000000", href: "https://wa.me/10000000000" },
-              { icon: <Linkedin className="w-5 h-5 text-primary" />, label: "LinkedIn", value: "/in/muhammad-naeem", href: "https://linkedin.com/in/muhammad-naeem" },
-              { icon: <Calendar className="w-5 h-5 text-primary" />, label: "Calendly", value: "Book a slot", href: "https://calendly.com/muhammad-naeem" },
+              { icon: <Linkedin className="w-5 h-5 text-primary" />, label: "LinkedIn", value: "/company/novus", href: "https://linkedin.com/company/novus" },
+              { icon: <Calendar className="w-5 h-5 text-primary" />, label: "Calendly", value: "Book a slot", href: "https://calendly.com/novus-agency" },
             ].map((card, i) => (
               <motion.a
                 key={i}
@@ -311,7 +311,7 @@ export function Home() {
                 </div>
                 <h3 className="text-3xl font-medium mb-4">Message Received</h3>
                 <p className="text-muted-foreground max-w-md mx-auto">
-                  Thanks for reaching out. I'll get back to you shortly to schedule your discovery call.
+                  Thanks for reaching out. Our team will get back to you shortly to schedule your discovery call.
                 </p>
                 <Button className="mt-8" variant="outline" onClick={() => setFormSent(false)}>
                   Send Another Message
@@ -321,7 +321,7 @@ export function Home() {
               <>
                 <h2 className="text-3xl md:text-4xl font-medium tracking-tight mb-4">Book a Discovery Call</h2>
                 <p className="text-muted-foreground mb-10 max-w-lg">
-                  Tell me about the repetitive work slowing your business down, and I'll outline how to automate it.
+                  Tell us about the repetitive work slowing your business down, and our team will outline how to automate it.
                 </p>
 
                 <form onSubmit={handleContactSubmit} className="space-y-6">

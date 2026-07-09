@@ -7,9 +7,9 @@ export function Footer() {
         
         <div className="flex flex-col gap-4 max-w-sm">
           <Logo />
-          <p className="text-foreground font-medium">Muhammad Naeem</p>
+          <p className="text-foreground font-medium">NOVUS</p>
           <p className="text-muted-foreground text-sm font-mono leading-relaxed">
-            AI Automation Specialist
+            AI Automation Agency
           </p>
         </div>
 
@@ -25,7 +25,7 @@ export function Footer() {
       </div>
       
       <div className="max-w-7xl mx-auto px-6 md:px-12 mt-24 pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center text-xs font-mono text-muted-foreground uppercase tracking-widest gap-4">
-        <span>© {new Date().getFullYear()} Muhammad Naeem. All Rights Reserved.</span>
+        <span>© {new Date().getFullYear()} NOVUS. All Rights Reserved.</span>
       </div>
     </footer>
   );
