@@ -1,0 +1,65 @@
+Build a modern, professional portfolio website for an AI automation startup called "Novus."
+
+BRAND / LOGO
+Novus has an existing logo: a thin, minimalist geometric wordmark ("NOVUS") in white on black, where the letter "O" is replaced by a swirling pattern of dots (like a data vortex / neural network / particle swirl) — evoking AI, automation, and motion. This logo will be provided as an image asset [LOGO PLACEHOLDER - insert actual logo file]. 
+- Use it in the navbar (top-left) and footer
+- Let the site's visual language echo the logo: thin/light typography, dot/particle motifs, circular or radial patterns, generous negative space
+- Stick to a pure black or near-black background so the white logo pops exactly as it does in the source file
+- Accent color should complement the white/black logo — consider electric blue, violet, or teal used sparingly (buttons, links, glowing highlights), not competing with the monochrome brand mark
+
+BUSINESS CONTEXT
+Novus specializes in building AI-powered automation systems for businesses — n8n workflow automation, AI agents, and custom integrations that save clients time and money. Target audience: small-to-medium business owners, freelance clients (e.g. from Fiverr), and startups looking to automate repetitive tasks with AI.
+
+DESIGN STYLE
+- Dark, techy, futuristic aesthetic anchored by the existing logo's minimalist/geometric feel
+- Deep black background with a single accent color for CTAs and highlights
+- Subtle particle/dot animations in the hero background (nod to the logo's swirl) — sparse, elegant, not busy
+- Thin, modern sans-serif typography (e.g. Inter, Space Grotesk, or similar) to match the logo's wordmark weight
+- Smooth scroll animations and subtle hover effects (buttons, cards)
+- Fully responsive (mobile-first)
+
+SECTIONS TO INCLUDE
+
+1. Hero Section
+   - Logo displayed prominently or in navbar
+   - Bold headline focused on the value proposition (e.g. "Automate Your Business with AI-Powered Workflows")
+   - Short supporting subheadline
+   - Primary CTA button ("Get a Free Consultation" or "Hire Me on Fiverr")
+   - Subtle animated dot/particle background echoing the logo's swirl motif
+
+2. Services Section
+   Present as 3-4 cards/columns:
+   - n8n Workflow Automation (connecting apps, automating repetitive tasks)
+   - AI Agent Development (custom AI agents for support, data processing, content, etc.)
+   - AI Integrations (OpenRouter/OpenAI-powered data extraction, chatbots, etc.)
+   - Custom Micro-SaaS / Automation Tools
+   Each card: icon, short title, 2-3 line description
+
+3. Portfolio / Case Studies Section
+   - Grid or carousel of 3-4 placeholder project cards
+   - Each card: project title, one-line problem statement, one-line solution, and a "tech used" tag list (e.g. n8n, OpenRouter, Google Sheets API)
+   - Use realistic placeholder names like "Subscription Expiry Tracker," "Instagram DM Automation Bot," "Exam Reminder System" — leave clearly marked as [PLACEHOLDER - replace with real project]
+
+4. Pricing / Packages Section
+   - 3-tier pricing layout (e.g. Starter / Pro / Enterprise or Basic / Standard / Custom)
+   - Each tier: price (or "Custom Quote"), bullet list of what's included, CTA button
+   - Mark prices as [PLACEHOLDER - insert actual pricing]
+
+5. Contact / CTA Section
+   - Simple contact form (Name, Email, Project Description, Submit button)
+   - Direct link/button to Fiverr gig — use [PLACEHOLDER - insert Fiverr gig URL]
+   - Optional: social/contact icons (LinkedIn, WhatsApp, Email)
+
+6. Footer
+   - Logo (small version)
+   - Quick links to sections
+   - Copyright line: "© 2026 Novus. All rights reserved."
+
+TECHNICAL REQUIREMENTS
+- Build as a single-page site with smooth anchor-link navigation between sections (sticky navbar with logo)
+- Use semantic HTML5, modern CSS (flexbox/grid), and vanilla JavaScript for interactivity — no unnecessary frameworks unless specified otherwise
+- Ensure fast load time and clean, well-commented code
+- Include favicon reference using the logo, and meta tags for SEO (title, description) referencing "Novus - AI Automation Agency"
+
+OUTPUT
+Provide complete, production-ready HTML, CSS, and JS code, organized clearly (or in separate files if the platform supports it).

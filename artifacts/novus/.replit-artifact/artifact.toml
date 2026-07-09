@@ -1,0 +1,27 @@
+kind = "web"
+previewPath = "/"
+title = "Novus"
+version = "1.0.0"
+id = "artifacts/novus"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 22142
+
+[services.development]
+run = "pnpm --filter @workspace/novus run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/novus", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/novus/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "22142"
+BASE_PATH = "/"
