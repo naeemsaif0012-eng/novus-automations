@@ -44,7 +44,8 @@ export function Navbar() {
         </div>
 
         <Button variant={scrolled ? "primary" : "outline"} size="sm" onClick={() => scrollTo('contact')}>
-          Book a Discovery Call
+          <span className="hidden sm:inline">Book a Discovery Call</span>
+          <span className="sm:hidden">Book a Call</span>
         </Button>
       </div>
     </motion.nav>

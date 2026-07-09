@@ -1,0 +1,90 @@
+Do not redesign the website.
+
+Keep all sections, branding, animations, particles, logo animation, colors, and layout.
+
+=================================================
+TYPOGRAPHY REFINEMENT
+=================================================
+
+Reduce overall content size slightly to create a cleaner and more premium appearance.
+
+Adjust:
+
+- Hero title: reduce by 10-15%
+- Hero description: reduce by 10%
+- Section headings: reduce by 5-10%
+- Service card text: reduce slightly
+- Project card text: reduce slightly
+- Contact section text: reduce slightly
+
+Maintain readability while improving visual balance.
+
+The website should feel closer to a premium SaaS landing page rather than a zoomed-in website.
+
+=================================================
+RESPONSIVE IMPROVEMENTS
+=================================================
+
+Perform a complete responsive optimization.
+
+Ensure:
+
+- All text scales smoothly on desktop, tablet, and mobile.
+- No text touches screen edges.
+- No awkward line breaks.
+- No content appears oversized on mobile.
+- All cards maintain proper spacing.
+- Navigation remains clean on smaller screens.
+- Buttons resize correctly on all devices.
+
+Use fluid typography where appropriate.
+
+=================================================
+BUTTON FIXES
+=================================================
+
+Fix all "Book a Discovery Call" buttons.
+
+Current issue:
+The button text slightly overflows or sits too close to the edge on some screen sizes.
+
+Required:
+
+- Ensure text remains fully inside button boundaries.
+- Adjust padding automatically.
+- Increase button width if necessary.
+- Ensure responsiveness across all screen sizes.
+
+=================================================
+PURPLE COLOR ADJUSTMENT
+=================================================
+
+Update the purple used on the primary CTA button.
+
+Current purple is too bright.
+
+Use a slightly darker purple that matches:
+
+- NOVUS logo accents
+- Accepting New Projects badge
+- Existing purple highlights throughout the site
+
+Keep contrast high enough for readability.
+
+The color should feel premium, elegant, and consistent with the site's visual identity.
+
+=================================================
+FINAL QUALITY CHECK
+=================================================
+
+Perform a full visual audit and ensure:
+
+- No overlapping elements
+- No clipped content
+- No oversized typography
+- No inconsistent spacing
+- Consistent alignment throughout
+- Perfect responsiveness across desktop, tablet, and mobile
+
+Goal:
+Create a cleaner, more polished, premium AI agency website with better typography scaling, darker purple accents, and flawless responsiveness.

@@ -37,9 +37,9 @@
   --border: 0 0% 12%;
   --input: 0 0% 12%;
   
-  /* Electric Violet Accent */
-  --ring: 265 89% 66%;
-  --primary: 265 89% 66%;
+  /* Electric Violet Accent (darker, premium tone) */
+  --ring: 265 75% 56%;
+  --primary: 265 75% 56%;
   --primary-foreground: 0 0% 100%;
 
   --secondary: 0 0% 9%;
@@ -48,7 +48,7 @@
   --muted: 0 0% 7%;
   --muted-foreground: 0 0% 60%;
 
-  --accent: 265 89% 66%;
+  --accent: 265 75% 56%;
   --accent-foreground: 0 0% 100%;
 
   --destructive: 0 84% 60%;
