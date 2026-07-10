@@ -1,0 +1,54 @@
+# Prompt for Replit: Make NOVUS build cleanly for Vercel (config only, no page changes)
+
+I need you to adjust the **build and deployment configuration** for the NOVUS frontend app so it deploys correctly on Vercel. Do NOT touch, rewrite, restructure, or "improve" any React components, pages, routes, styles, or content. Every page must render pixel-identical to how it works right now in Replit/dev. This is a config-only task.
+
+## Project context
+
+- Monorepo. Frontend lives at `artifacts/novus`.
+- Stack: React + Vite + TypeScript + Tailwind CSS.
+- Deploying to Vercel with Root Directory set to `artifacts/novus`.
+- Other folders in the repo (`artifacts/api-server`, `artifacts/mockup-sandbox`) are separate services — do not touch their build output or bundle them into the frontend deploy.
+
+## What "ideal" looks like — please implement/verify these
+
+### 1. Vite config (`artifacts/novus/vite.config.ts`)
+- Must target **browser only** — no `build.ssr`, no `build.lib`, no Node-platform esbuild options anywhere in the chain.
+- `build.outDir` should be a clean, dedicated path (e.g. `dist/public` or just `dist` — pick one and make sure it matches `vercel.json` exactly).
+- `build.emptyOutDir: true` so stale files never linger between builds.
+- `base` should be `/` for a standard Vercel deployment (not a subpath), unless there's a specific reason for a different base — flag it to me if so, don't just change it silently.
+
+### 2. `artifacts/novus/vercel.json`
+- `outputDirectory` must exactly match Vite's `build.outDir`.
+- `buildCommand`: `npm run build` (or whatever the actual working script name is inside `artifacts/novus/package.json` — verify it exists before referencing it).
+- `installCommand`: `npm install`.
+- Keep the SPA rewrite rule so client-side routing works:
+  ```json
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/index.html" }
+  ]
+  ```
+
+### 3. `artifacts/novus/package.json`
+- Pin `engines`:
+  ```json
+  "engines": { "node": "20.x", "npm": "10.8.2" }
+  ```
+- Keep dependency versions as plain semver — confirm there are no leftover `catalog:` or `workspace:*` references anywhere (root or nested).
+- Keep the existing Rollup `overrides` entry that avoids the native-binary install bug on Vercel's Linux build containers, unless you've specifically re-tested and confirmed the build succeeds without it.
+
+### 4. Root-level files — do not let these interfere with the frontend deploy
+- Root `package.json` must NOT have a `preinstall`/`postinstall` script that blocks or exits when npm (not pnpm) is used inside `artifacts/novus`'s isolated Vercel install context. If root tooling needs pnpm for other packages, scope that enforcement so it doesn't fire during a Vercel build of `artifacts/novus`.
+- Do not add a root-level `vercel.json` unless it's strictly required for deploying a *different* app in this monorepo as its own separate Vercel project — and if you do, make sure it can never affect `artifacts/novus`'s build/install/output settings.
+- Do not add root-level `build`/`install` scripts that run across all workspace packages (e.g. `--workspaces`, turbo, etc.) that could cause `api-server` or `mockup-sandbox` build artifacts to leak into the `novus` deploy output.
+
+### 5. Output cleanliness — verify, don't just assume
+- After building, confirm the output folder contains only browser-safe bundles (plain `assets/*.js`, `index.html`, static assets).
+- Grep the built JS output for `node:module` or `createRequire` — these strings should NOT appear anywhere. Their presence means a Node-targeted bundle (e.g. from `api-server`) has leaked into the frontend output.
+
+### 6. Hard constraint
+- No changes to anything inside `artifacts/novus/src/`.
+- No changes to `index.html` content (only reference paths if genuinely required by an outDir/base change — explain why if you touch it).
+- No dependency version bumps beyond what's strictly needed to fix the build (e.g. don't casually upgrade React, Tailwind, or other libs as a "cleanup").
+
+## Before you finish
+Show me a diff of every file you changed. I will review the diff before pushing to GitHub. If a fix requires touching anything under `src/` or changing visual/page behavior in any way, stop and ask me first instead of proceeding.

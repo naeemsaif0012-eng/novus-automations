@@ -4,7 +4,8 @@
   "private": true,
   "type": "module",
   "engines": {
-    "node": ">=20.0.0"
+    "node": "20.x",
+    "npm": "10.8.2"
   },
   "scripts": {
     "dev": "vite --config vite.config.ts --host 0.0.0.0",
