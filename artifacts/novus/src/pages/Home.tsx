@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import { ParticleMotif } from '@/components/ParticleMotif';
-import { ArrowRight, Cpu, Network, CheckCircle2, Bot, Layers, MessageCircle, Mail, Search, ClipboardList, Hammer, Rocket, TrendingUp } from 'lucide-react';
+import { ArrowRight, Cpu, Network, CheckCircle2, Bot, Layers, MessageCircle, Mail, Instagram, Search, ClipboardList, Hammer, Rocket, TrendingUp } from 'lucide-react';
 import { useState } from 'react';
 
 const fadeIn = {
@@ -27,10 +27,43 @@ const staggerItem = {
 export function Home() {
   const [formSent, setFormSent] = useState(false);
 
-  const handleContactSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    setFormSent(true);
+  const handleContactSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  e.preventDefault();
+
+  const form = e.currentTarget;
+  const formData = new FormData(form);
+
+  const data = {
+    name: formData.get("name"),
+    email: formData.get("email"),
+    phone: formData.get("phone"),
+    message: formData.get("message"),
   };
+
+  try {
+    console.log("Submitting data:", data);
+    const response = await fetch(
+      "https://n8n-production-56a0.up.railway.app/webhook/novus-lead",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      }
+    );
+
+    if (!response.ok) {
+      throw new Error("Failed to submit form");
+    }
+
+    setFormSent(true);
+    form.reset();
+  } catch (error) {
+    console.error("Form submission error:", error);
+    alert("Failed to send message. Please try again.");
+  }
+};
 
   return (
     <main className="flex flex-col min-h-screen bg-background text-foreground overflow-hidden">
@@ -51,7 +84,7 @@ export function Home() {
               Accepting New Projects
             </div>
             
-            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-medium tracking-tight mb-8 leading-[1.15]">
+            <h1 className="text-[1.8rem] sm:text-[2.3rem] md:text-[2.8rem] lg:text-[3.45rem] font-medium tracking-tight mb-8 leading-[1.15]">
               AI Automations That <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-white to-white/40">Actually Save Time.</span>
             </h1>
@@ -73,7 +106,7 @@ export function Home() {
             className="flex flex-col sm:flex-row gap-4 sm:gap-6 w-full sm:w-auto px-4 sm:px-0"
           >
             <Button size="lg" className="w-full sm:w-auto" onClick={() => document.getElementById('contact')?.scrollIntoView({behavior: 'smooth'})}>
-              Book a Discovery Call <ArrowRight className="ml-2 w-4 h-4 shrink-0" />
+              Get in Touch <ArrowRight className="ml-2 w-4 h-4 shrink-0" />
             </Button>
             <Button size="lg" variant="outline" className="w-full sm:w-auto" onClick={() => document.getElementById('projects')?.scrollIntoView({behavior: 'smooth'})}>
               View Projects
@@ -83,10 +116,10 @@ export function Home() {
       </section>
 
       {/* SERVICES SECTION */}
-      <section id="services" className="py-32 relative">
+      <section id="services" className="py-24 sm:py-28 lg:py-32 relative">
         <div className="max-w-7xl mx-auto px-6 md:px-12">
-          <motion.div {...fadeIn} className="mb-20">
-            <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-medium tracking-tight mb-6">Services</h2>
+          <motion.div {...fadeIn} className="mb-14">
+            <h2 className="text-[1.45rem] sm:text-[1.8rem] md:text-[2.15rem] lg:text-[2.6rem] font-medium tracking-tight mb-6">Services</h2>
             <p className="text-muted-foreground font-mono text-xs sm:text-sm max-w-xl uppercase tracking-widest leading-relaxed">
               Custom AI systems designed to automate operations and increase efficiency.
             </p>
@@ -97,7 +130,7 @@ export function Home() {
             initial="initial" 
             whileInView="whileInView" 
             viewport={{ once: true, margin: "-100px" }}
-            className="grid grid-cols-1 md:grid-cols-2 gap-8"
+            className="grid grid-cols-1 md:grid-cols-2 gap-6"
           >
             {[
               {
@@ -124,12 +157,12 @@ export function Home() {
               <motion.div 
                 key={i} 
                 variants={staggerItem}
-                className="group p-10 bg-secondary/30 border border-white/5 rounded-sm hover:bg-secondary/50 hover:border-primary/30 transition-all duration-500"
+                className="group flex h-full min-h-[260px] flex-col p-8 bg-secondary/30 border border-white/5 rounded-sm hover:bg-secondary/50 hover:border-primary/30 transition-all duration-500"
               >
-                <div className="mb-6 p-4 bg-background inline-block rounded-sm border border-white/5 group-hover:border-primary/20 transition-colors">
+                <div className="mb-5 p-3 bg-background inline-flex rounded-sm border border-white/5 group-hover:border-primary/20 transition-colors">
                   {service.icon}
                 </div>
-                <h3 className="text-base sm:text-lg font-medium mb-4">{service.title}</h3>
+                <h3 className="text-[15px] sm:text-base font-medium mb-4">{service.title}</h3>
                 <ul className="space-y-2">
                   {service.items.map((item, idx) => (
                     <li key={idx} className="text-xs sm:text-sm text-muted-foreground leading-relaxed flex items-center gap-2">
@@ -145,11 +178,11 @@ export function Home() {
       </section>
 
       {/* PROJECTS SECTION */}
-      <section id="projects" className="py-32 bg-secondary/10 relative overflow-hidden">
+      <section id="projects" className="py-24 sm:py-28 lg:py-32 bg-secondary/10 relative overflow-hidden">
         <ParticleMotif className="top-0 right-0 translate-x-1/3 -translate-y-1/3 w-[600px] h-[600px] opacity-10" count={40} />
         <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
-          <motion.div {...fadeIn} className="mb-20">
-            <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-medium tracking-tight mb-6">Featured Projects</h2>
+          <motion.div {...fadeIn} className="mb-14">
+            <h2 className="text-[1.45rem] sm:text-[1.8rem] md:text-[2.15rem] lg:text-[2.6rem] font-medium tracking-tight mb-6">Featured Projects</h2>
             <p className="text-muted-foreground font-mono text-xs sm:text-sm max-w-xl uppercase tracking-widest leading-relaxed">
               Real automation solutions and AI systems.
             </p>
@@ -160,7 +193,7 @@ export function Home() {
             initial="initial" 
             whileInView="whileInView" 
             viewport={{ once: true, margin: "-100px" }}
-            className="grid grid-cols-1 lg:grid-cols-3 gap-8"
+            className="grid grid-cols-1 lg:grid-cols-3 gap-6"
           >
             {[
               {
@@ -201,12 +234,12 @@ export function Home() {
       </section>
 
       {/* ABOUT SECTION */}
-      <section id="about" className="py-32 relative overflow-hidden">
+      <section id="about" className="py-24 sm:py-28 lg:py-32 relative overflow-hidden">
         <ParticleMotif className="bottom-0 left-0 -translate-x-1/3 translate-y-1/3 w-[600px] h-[600px] opacity-10" count={30} />
         <div className="max-w-4xl mx-auto px-6 md:px-12 relative z-10">
           <motion.div {...fadeIn}>
-            <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-medium tracking-tight mb-10">About NOVUS</h2>
-            <div className="space-y-6 text-xs sm:text-sm md:text-base text-muted-foreground leading-relaxed font-light">
+            <h2 className="text-[1.45rem] sm:text-[1.8rem] md:text-[2.15rem] lg:text-[2.6rem] font-medium tracking-tight mb-10">About NOVUS</h2>
+            <div className="space-y-6 text-sm sm:text-[15px] md:text-base text-muted-foreground leading-relaxed font-light">
               <p><span className="text-foreground">NOVUS</span> is an AI Automation Agency focused on helping businesses streamline operations through AI agents, workflow automation, and custom integrations.</p>
               <p>
                 Our team designs and deploys AI agents, workflow automations, and intelligent business systems that help businesses eliminate repetitive work and operate more efficiently.
@@ -220,10 +253,10 @@ export function Home() {
       </section>
 
       {/* PROCESS SECTION */}
-      <section id="process" className="py-32 bg-secondary/10 relative">
+      <section id="process" className="py-24 sm:py-28 lg:py-32 bg-secondary/10 relative">
         <div className="max-w-7xl mx-auto px-6 md:px-12">
-          <motion.div {...fadeIn} className="mb-20">
-            <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-medium tracking-tight mb-6">How We Work</h2>
+          <motion.div {...fadeIn} className="mb-14">
+            <h2 className="text-[1.45rem] sm:text-[1.8rem] md:text-[2.15rem] lg:text-[2.6rem] font-medium tracking-tight mb-6">How We Work</h2>
           </motion.div>
 
           <motion.div 
@@ -256,12 +289,12 @@ export function Home() {
       </section>
 
       {/* CONTACT SECTION */}
-      <section id="contact" className="py-32 bg-secondary/10 relative overflow-hidden">
+      <section id="contact" className="py-24 sm:py-28 lg:py-32 bg-secondary/10 relative overflow-hidden">
         <ParticleMotif className="bottom-0 left-0 -translate-x-1/3 translate-y-1/3 w-[800px] h-[800px] opacity-5" count={50} />
 
         <div className="max-w-5xl mx-auto px-6 relative z-10">
           <motion.div {...fadeIn} className="mb-16 text-center flex flex-col items-center">
-            <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-medium tracking-tight mb-6">Let's Automate Your Business</h2>
+            <h2 className="text-[1.45rem] sm:text-[1.8rem] md:text-[2.15rem] lg:text-[2.6rem] font-medium tracking-tight mb-6">Let's Automate Your Business</h2>
             <p className="text-muted-foreground font-mono text-xs sm:text-sm max-w-xl uppercase tracking-widest leading-relaxed">
               Ready to eliminate repetitive tasks and scale efficiently?
             </p>
@@ -272,11 +305,12 @@ export function Home() {
             initial="initial"
             whileInView="whileInView"
             viewport={{ once: true, margin: "-100px" }}
-            className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-16 max-w-2xl mx-auto"
+            className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 mb-14 max-w-4xl mx-auto"
           >
             {[
               { icon: <Mail className="w-5 h-5 text-primary" />, label: "Email", value: "novus.ai.automation@gmail.com", href: "mailto:novus.ai.automation@gmail.com" },
-              { icon: <MessageCircle className="w-5 h-5 text-primary" />, label: "WhatsApp", value: "0329-9615669", href: "https://wa.me/923299615669" },
+              { icon: <MessageCircle className="w-5 h-5 text-primary" />, label: "WhatsApp", value: "0329-9615669", href: "https://wa.me/923299615669?text=Hi%20NOVUS,%20I'm%20interested%20in%20AI%20automation." },
+              { icon: <Instagram className="w-5 h-5 text-primary" />, label: "Instagram", value: "@novus.ai.auto", href: "https://instagram.com/novus.ai.auto" },
             ].map((card, i) => (
               <motion.a
                 key={i}
@@ -284,9 +318,9 @@ export function Home() {
                 target={card.href.startsWith('http') ? '_blank' : undefined}
                 rel={card.href.startsWith('http') ? 'noopener noreferrer' : undefined}
                 variants={staggerItem}
-                className="flex flex-col items-center text-center gap-3 p-6 bg-background border border-white/5 rounded-sm hover:border-primary/30 transition-all duration-500"
+                className="group flex h-full flex-col items-center justify-center text-center gap-3 p-5 bg-background border border-white/5 rounded-sm hover:border-primary/30 transition-all duration-500 hover:-translate-y-1"
               >
-                <div className="p-3 bg-secondary/30 rounded-sm border border-white/5">
+                <div className="p-3 bg-secondary/30 rounded-sm border border-white/5 group-hover:border-primary/20 transition-colors">
                   {card.icon}
                 </div>
                 <span className="font-mono text-[10px] sm:text-[11px] uppercase tracking-widest text-muted-foreground">{card.label}</span>
@@ -317,7 +351,7 @@ export function Home() {
               </div>
             ) : (
               <>
-                <h2 className="text-xl sm:text-2xl md:text-3xl font-medium tracking-tight mb-4">Book a Discovery Call</h2>
+                <h2 className="text-[1.35rem] sm:text-[1.7rem] md:text-[2rem] font-medium tracking-tight mb-4">Get in Touch</h2>
                 <p className="text-xs sm:text-sm text-muted-foreground mb-10 max-w-lg">
                   Tell us about the repetitive work slowing your business down, and our team will outline how to automate it.
                 </p>
@@ -328,7 +362,8 @@ export function Home() {
                       <label className="text-[11px] font-mono uppercase tracking-widest text-muted-foreground">Name</label>
                       <input 
                         required 
-                        type="text" 
+                        type="text"
+                        name="name"
                         className="w-full bg-secondary/50 border border-white/10 rounded-sm px-4 py-3 text-xs sm:text-sm focus:outline-none focus:border-primary/50 transition-colors"
                         placeholder="John Doe / Acme Corp"
                       />
@@ -337,23 +372,35 @@ export function Home() {
                       <label className="text-[11px] font-mono uppercase tracking-widest text-muted-foreground">Email</label>
                       <input 
                         required 
-                        type="email" 
+                        type="email"
+                        name="email"
                         className="w-full bg-secondary/50 border border-white/10 rounded-sm px-4 py-3 text-xs sm:text-sm focus:outline-none focus:border-primary/50 transition-colors"
                         placeholder="john@acme.com"
                       />
                     </div>
                   </div>
                   <div className="space-y-2">
+                    <label className="text-[11px] font-mono uppercase tracking-widest text-muted-foreground">Contact Number</label>
+                    <input 
+                      required 
+                      type="tel"
+                      name="phone"
+                      className="w-full bg-secondary/50 border border-white/10 rounded-sm px-4 py-3 text-xs sm:text-sm focus:outline-none focus:border-primary/50 transition-colors"
+                      placeholder="+92 300 1234567"
+                    />
+                  </div>
+                  <div className="space-y-2">
                     <label className="text-[11px] font-mono uppercase tracking-widest text-muted-foreground">What would you like to automate?</label>
                     <textarea 
                       required 
+                      name="message"
                       rows={5} 
                       className="w-full bg-secondary/50 border border-white/10 rounded-sm px-4 py-3 text-xs sm:text-sm focus:outline-none focus:border-primary/50 transition-colors resize-none"
                       placeholder="Describe the manual process currently slowing down your operations..."
                     ></textarea>
                   </div>
                   <Button type="submit" size="lg" className="w-full sm:w-auto">
-                    Book a Discovery Call <Cpu className="ml-2 w-4 h-4" />
+                    Get in Touch <Cpu className="ml-2 w-4 h-4" />
                   </Button>
                 </form>
               </>
