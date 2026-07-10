@@ -51,7 +51,7 @@ export function Home() {
               Accepting New Projects
             </div>
             
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-medium tracking-tight mb-8 leading-[1.15]">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-medium tracking-tight mb-8 leading-[1.15]">
               AI Automations That <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-white to-white/40">Actually Save Time.</span>
             </h1>
@@ -61,7 +61,7 @@ export function Home() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] as [number, number, number, number] }}
-            className="text-sm sm:text-base md:text-lg text-muted-foreground max-w-2xl font-light mb-12 leading-relaxed px-2 sm:px-0"
+            className="text-xs sm:text-sm md:text-base text-muted-foreground max-w-2xl font-light mb-12 leading-relaxed px-2 sm:px-0"
           >
             NOVUS builds AI agents, automations, and intelligent systems that eliminate repetitive work, reduce operational overhead, and help businesses scale efficiently.
           </motion.p>
@@ -86,8 +86,8 @@ export function Home() {
       <section id="services" className="py-32 relative">
         <div className="max-w-7xl mx-auto px-6 md:px-12">
           <motion.div {...fadeIn} className="mb-20">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-medium tracking-tight mb-6">Services</h2>
-            <p className="text-muted-foreground font-mono text-sm max-w-xl uppercase tracking-widest leading-relaxed">
+            <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-medium tracking-tight mb-6">Services</h2>
+            <p className="text-muted-foreground font-mono text-xs sm:text-sm max-w-xl uppercase tracking-widest leading-relaxed">
               Custom AI systems designed to automate operations and increase efficiency.
             </p>
           </motion.div>
@@ -129,10 +129,10 @@ export function Home() {
                 <div className="mb-6 p-4 bg-background inline-block rounded-sm border border-white/5 group-hover:border-primary/20 transition-colors">
                   {service.icon}
                 </div>
-                <h3 className="text-lg sm:text-xl font-medium mb-4">{service.title}</h3>
+                <h3 className="text-base sm:text-lg font-medium mb-4">{service.title}</h3>
                 <ul className="space-y-2">
                   {service.items.map((item, idx) => (
-                    <li key={idx} className="text-sm text-muted-foreground leading-relaxed flex items-center gap-2">
+                    <li key={idx} className="text-xs sm:text-sm text-muted-foreground leading-relaxed flex items-center gap-2">
                       <span className="w-1 h-1 rounded-full bg-primary shrink-0" />
                       {item}
                     </li>
@@ -149,8 +149,8 @@ export function Home() {
         <ParticleMotif className="top-0 right-0 translate-x-1/3 -translate-y-1/3 w-[600px] h-[600px] opacity-10" count={40} />
         <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
           <motion.div {...fadeIn} className="mb-20">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-medium tracking-tight mb-6">Featured Projects</h2>
-            <p className="text-muted-foreground font-mono text-sm max-w-xl uppercase tracking-widest leading-relaxed">
+            <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-medium tracking-tight mb-6">Featured Projects</h2>
+            <p className="text-muted-foreground font-mono text-xs sm:text-sm max-w-xl uppercase tracking-widest leading-relaxed">
               Real automation solutions and AI systems.
             </p>
           </motion.div>
@@ -184,11 +184,11 @@ export function Home() {
                 variants={staggerItem}
                 className="group flex flex-col p-10 border border-white/5 bg-background rounded-sm hover:border-primary/30 transition-all duration-500"
               >
-                <span className="font-mono text-xs text-primary uppercase tracking-widest mb-4">{project.stack}</span>
-                <h3 className="text-xl sm:text-2xl font-medium mb-6">{project.title}</h3>
+                <span className="font-mono text-[11px] sm:text-xs text-primary uppercase tracking-widest mb-4">{project.stack}</span>
+                <h3 className="text-lg sm:text-xl font-medium mb-6">{project.title}</h3>
                 <ul className="flex-1 space-y-3">
                   {project.items.map((item, idx) => (
-                    <li key={idx} className="flex items-start gap-3 text-[13px] sm:text-sm text-muted-foreground leading-relaxed">
+                    <li key={idx} className="flex items-start gap-3 text-xs sm:text-[13px] text-muted-foreground leading-relaxed">
                       <CheckCircle2 className="w-4 h-4 text-primary shrink-0 mt-0.5" />
                       <span>{item}</span>
                     </li>
@@ -205,8 +205,8 @@ export function Home() {
         <ParticleMotif className="bottom-0 left-0 -translate-x-1/3 translate-y-1/3 w-[600px] h-[600px] opacity-10" count={30} />
         <div className="max-w-4xl mx-auto px-6 md:px-12 relative z-10">
           <motion.div {...fadeIn}>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-medium tracking-tight mb-10">About NOVUS</h2>
-            <div className="space-y-6 text-sm sm:text-base md:text-lg text-muted-foreground leading-relaxed font-light">
+            <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-medium tracking-tight mb-10">About NOVUS</h2>
+            <div className="space-y-6 text-xs sm:text-sm md:text-base text-muted-foreground leading-relaxed font-light">
               <p><span className="text-foreground">NOVUS</span> is an AI Automation Agency focused on helping businesses streamline operations through AI agents, workflow automation, and custom integrations.</p>
               <p>
                 Our team designs and deploys AI agents, workflow automations, and intelligent business systems that help businesses eliminate repetitive work and operate more efficiently.
@@ -223,7 +223,7 @@ export function Home() {
       <section id="process" className="py-32 bg-secondary/10 relative">
         <div className="max-w-7xl mx-auto px-6 md:px-12">
           <motion.div {...fadeIn} className="mb-20">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-medium tracking-tight mb-6">How We Work</h2>
+            <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-medium tracking-tight mb-6">How We Work</h2>
           </motion.div>
 
           <motion.div 
@@ -247,8 +247,8 @@ export function Home() {
                   </div>
                   <span className="font-mono text-xs text-muted-foreground tracking-widest">{phase.step}</span>
                 </div>
-                <h3 className="text-base sm:text-lg font-medium">{phase.title}</h3>
-                <p className="text-muted-foreground text-[13px] sm:text-sm leading-relaxed">{phase.desc}</p>
+                <h3 className="text-sm sm:text-base font-medium">{phase.title}</h3>
+                <p className="text-muted-foreground text-xs sm:text-[13px] leading-relaxed">{phase.desc}</p>
               </motion.div>
             ))}
           </motion.div>
@@ -261,8 +261,8 @@ export function Home() {
 
         <div className="max-w-5xl mx-auto px-6 relative z-10">
           <motion.div {...fadeIn} className="mb-16 text-center flex flex-col items-center">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-medium tracking-tight mb-6">Let's Automate Your Business</h2>
-            <p className="text-muted-foreground font-mono text-sm max-w-xl uppercase tracking-widest leading-relaxed">
+            <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-medium tracking-tight mb-6">Let's Automate Your Business</h2>
+            <p className="text-muted-foreground font-mono text-xs sm:text-sm max-w-xl uppercase tracking-widest leading-relaxed">
               Ready to eliminate repetitive tasks and scale efficiently?
             </p>
           </motion.div>
@@ -289,8 +289,8 @@ export function Home() {
                 <div className="p-3 bg-secondary/30 rounded-sm border border-white/5">
                   {card.icon}
                 </div>
-                <span className="font-mono text-[11px] sm:text-xs uppercase tracking-widest text-muted-foreground">{card.label}</span>
-                <span className="text-xs sm:text-sm text-foreground/80 break-all">{card.value}</span>
+                <span className="font-mono text-[10px] sm:text-[11px] uppercase tracking-widest text-muted-foreground">{card.label}</span>
+                <span className="text-[11px] sm:text-xs text-foreground/80 break-all">{card.value}</span>
               </motion.a>
             ))}
           </motion.div>
@@ -307,8 +307,8 @@ export function Home() {
                 <div className="w-16 h-16 rounded-full bg-primary/20 flex items-center justify-center mb-6">
                   <CheckCircle2 className="w-8 h-8 text-primary" />
                 </div>
-                <h3 className="text-2xl sm:text-3xl font-medium mb-4">Message Received</h3>
-                <p className="text-sm sm:text-base text-muted-foreground max-w-md mx-auto">
+                <h3 className="text-xl sm:text-2xl font-medium mb-4">Message Received</h3>
+                <p className="text-xs sm:text-sm text-muted-foreground max-w-md mx-auto">
                   Thanks for reaching out. Our team will get back to you shortly to schedule your discovery call.
                 </p>
                 <Button className="mt-8" variant="outline" onClick={() => setFormSent(false)}>
@@ -317,38 +317,38 @@ export function Home() {
               </div>
             ) : (
               <>
-                <h2 className="text-2xl sm:text-3xl md:text-4xl font-medium tracking-tight mb-4">Book a Discovery Call</h2>
-                <p className="text-sm sm:text-base text-muted-foreground mb-10 max-w-lg">
+                <h2 className="text-xl sm:text-2xl md:text-3xl font-medium tracking-tight mb-4">Book a Discovery Call</h2>
+                <p className="text-xs sm:text-sm text-muted-foreground mb-10 max-w-lg">
                   Tell us about the repetitive work slowing your business down, and our team will outline how to automate it.
                 </p>
 
                 <form onSubmit={handleContactSubmit} className="space-y-6">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div className="space-y-2">
-                      <label className="text-xs font-mono uppercase tracking-widest text-muted-foreground">Name</label>
+                      <label className="text-[11px] font-mono uppercase tracking-widest text-muted-foreground">Name</label>
                       <input 
                         required 
                         type="text" 
-                        className="w-full bg-secondary/50 border border-white/10 rounded-sm px-4 py-3 text-sm focus:outline-none focus:border-primary/50 transition-colors"
+                        className="w-full bg-secondary/50 border border-white/10 rounded-sm px-4 py-3 text-xs sm:text-sm focus:outline-none focus:border-primary/50 transition-colors"
                         placeholder="John Doe / Acme Corp"
                       />
                     </div>
                     <div className="space-y-2">
-                      <label className="text-xs font-mono uppercase tracking-widest text-muted-foreground">Email</label>
+                      <label className="text-[11px] font-mono uppercase tracking-widest text-muted-foreground">Email</label>
                       <input 
                         required 
                         type="email" 
-                        className="w-full bg-secondary/50 border border-white/10 rounded-sm px-4 py-3 text-sm focus:outline-none focus:border-primary/50 transition-colors"
+                        className="w-full bg-secondary/50 border border-white/10 rounded-sm px-4 py-3 text-xs sm:text-sm focus:outline-none focus:border-primary/50 transition-colors"
                         placeholder="john@acme.com"
                       />
                     </div>
                   </div>
                   <div className="space-y-2">
-                    <label className="text-xs font-mono uppercase tracking-widest text-muted-foreground">What would you like to automate?</label>
+                    <label className="text-[11px] font-mono uppercase tracking-widest text-muted-foreground">What would you like to automate?</label>
                     <textarea 
                       required 
                       rows={5} 
-                      className="w-full bg-secondary/50 border border-white/10 rounded-sm px-4 py-3 text-sm focus:outline-none focus:border-primary/50 transition-colors resize-none"
+                      className="w-full bg-secondary/50 border border-white/10 rounded-sm px-4 py-3 text-xs sm:text-sm focus:outline-none focus:border-primary/50 transition-colors resize-none"
                       placeholder="Describe the manual process currently slowing down your operations..."
                     ></textarea>
                   </div>
