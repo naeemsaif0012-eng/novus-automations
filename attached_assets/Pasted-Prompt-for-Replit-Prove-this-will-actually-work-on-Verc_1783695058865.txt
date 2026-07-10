@@ -1,0 +1,39 @@
+Prompt for Replit: Prove this will actually work on Vercel — evidence only, no summaries
+
+I don't want a narrative report. I want reproducible proof. Previous audits have made claims that turned out to be wrong (e.g. claiming a root vercel.json was deleted when it never existed; claiming the root preinstall script "has no impact" without evidence). Do not repeat that pattern. For every claim below, show me the actual command you ran and its actual raw output — not a summary, not a checklist, not a ✅.
+
+The one unresolved question that matters most
+
+Does Vercel's install step ever execute anything at the repo root before/alongside installing inside artifacts/novus, given Root Directory is set to artifacts/novus?
+
+This is not a question you can answer from memory or general Vercel knowledge — verify it against this specific repo's actual config. Steps:
+
+
+Show me the current, full, literal contents of the root package.json's preinstall/postinstall scripts (if any still exist).
+Search Vercel's own documentation (or the installed vercel CLI's behavior if available) for how rootDirectory affects the install step in a monorepo — specifically whether npm install runs with repo root as cwd and merely targets artifacts/novus, or whether it runs entirely inside artifacts/novus as if it were the repo root. These are different behaviors and only one is true.
+If you have Vercel CLI access, run an actual local simulation:
+
+
+   vercel build
+
+from the repo root, with the project linked/configured to match production settings (Root Directory: artifacts/novus). Paste the full raw log output, especially the install step. Do not paraphrase it.
+4. If vercel build isn't available in this environment, say so explicitly — do not substitute a plain npm install run scoped to artifacts/novus and present it as equivalent proof. That is not the same test and should not be described as one.
+
+Additional evidence to produce (raw output only)
+
+
+cat artifacts/novus/package.json — full file, so I can see engines, overrides, and scripts as they currently exist, not as described.
+cat artifacts/novus/vercel.json — full file.
+cat artifacts/novus/.nvmrc — full file.
+cat package.json (root) — full file, so I can see whether the preinstall guard is still present, modified, or removed.
+git log -p -1 -- package.json (root) — show the actual last commit diff to the root package.json, so I can verify what was really changed versus what was claimed to be changed in past summaries.
+find . -maxdepth 2 -name "vercel.json" — to definitively confirm how many vercel.json files exist in this repo and where.
+
+
+What "confident this will work" actually requires
+
+Do not tell me it's "Vercel-ready" unless you can point to one of these two things:
+(a) an actual vercel build or vercel --prod run against this repo with Root Directory set to artifacts/novus, with a full raw log showing install + build succeeding, OR
+(b) if you cannot run that in this environment, say plainly: "I cannot fully simulate Vercel's install context here; the following is the strongest available evidence short of a real deploy," and then list only what you actually verified — not what you're inferring.
+
+I will be pushing this to GitHub and watching Vercel's real dashboard build immediately after. If your claims here don't match what I see there, I need to know exactly which of your checks was wrong, so be precise and don't hedge with confident-sounding language you can't back up.
