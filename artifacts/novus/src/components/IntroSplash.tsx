@@ -39,15 +39,15 @@ export function IntroSplash() {
             animate={{ opacity: 1, scale: 1, filter: 'blur(0px)' }}
             exit={{ opacity: 0, scale: 1.05 }}
             transition={{ duration: prefersReducedMotion ? 0.2 : 1, ease: easeOut }}
-            className="flex items-center text-foreground font-sans font-light tracking-[0.15em] sm:tracking-[0.2em] md:tracking-[0.25em] select-none uppercase text-4xl sm:text-5xl md:text-7xl lg:text-8xl"
+            className="flex items-center justify-center text-foreground font-sans font-light tracking-[0.1em] sm:tracking-[0.13em] md:tracking-[0.15em] select-none lowercase text-[3.15rem] sm:text-[4rem] md:text-[4.95rem] lg:text-[5.85rem] leading-none"
           >
-            <span>N</span>
-            <div className="relative w-[0.85em] h-[0.85em] mx-[0.08em] flex items-center justify-center">
+            <span className="text-[1.0em]">n</span>
+            <div className="relative w-[0.9em] h-[0.9em] mx-[0.045em] flex items-center justify-center">
               {/* Outer slow ring */}
               <motion.svg
                 width="100%"
                 height="100%"
-                viewBox="0 0 28 28"
+                viewBox="0 0 32 32"
                 className="absolute inset-0"
                 animate={{ rotate: 360 }}
                 transition={{ duration: 24, repeat: Infinity, ease: 'linear' }}
@@ -55,37 +55,37 @@ export function IntroSplash() {
                 <motion.g
                   animate={{ rotate: -180 }}
                   transition={{ duration: 16, repeat: Infinity, ease: 'linear' }}
-                  style={{ transformOrigin: '14px 14px' }}
+                  style={{ transformOrigin: '16px 16px' }}
                 >
-                  <circle cx="14" cy="3" r="1.5" fill="currentColor" opacity="0.9" />
-                  <circle cx="21.7" cy="6.3" r="1" fill="currentColor" opacity="0.5" />
-                  <circle cx="25" cy="14" r="2" fill="currentColor" opacity="1" />
-                  <circle cx="21.7" cy="21.7" r="1" fill="currentColor" opacity="0.4" />
-                  <circle cx="14" cy="25" r="1.5" fill="currentColor" opacity="0.8" />
-                  <circle cx="6.3" cy="21.7" r="1" fill="currentColor" opacity="0.3" />
-                  <circle cx="3" cy="14" r="2" fill="currentColor" opacity="0.9" />
-                  <circle cx="6.3" cy="6.3" r="1" fill="currentColor" opacity="0.6" />
+                  <circle cx="16" cy="3" r="1.75" fill="currentColor" opacity="0.9" />
+                  <circle cx="24.4" cy="7" r="1.1" fill="currentColor" opacity="0.55" />
+                  <circle cx="28" cy="16" r="2.2" fill="currentColor" opacity="1" />
+                  <circle cx="24.4" cy="25" r="1.1" fill="currentColor" opacity="0.45" />
+                  <circle cx="16" cy="29" r="1.75" fill="currentColor" opacity="0.8" />
+                  <circle cx="7.6" cy="25" r="1.1" fill="currentColor" opacity="0.35" />
+                  <circle cx="4" cy="16" r="2.2" fill="currentColor" opacity="0.9" />
+                  <circle cx="7.6" cy="7" r="1.1" fill="currentColor" opacity="0.65" />
                 </motion.g>
               </motion.svg>
               {/* Inner fast ring - Primary Accent */}
               <motion.svg
-                width="57%"
-                height="57%"
-                viewBox="0 0 16 16"
+                width="60%"
+                height="60%"
+                viewBox="0 0 18 18"
                 className="absolute text-primary"
                 animate={{ rotate: -360 }}
                 transition={{ duration: 12, repeat: Infinity, ease: 'linear' }}
               >
-                <g style={{ transformOrigin: '8px 8px' }}>
-                  <circle cx="8" cy="1" r="1" fill="currentColor" opacity="0.9" />
-                  <circle cx="14" cy="5" r="1.5" fill="currentColor" opacity="1" />
-                  <circle cx="12" cy="13" r="1" fill="currentColor" opacity="0.5" />
-                  <circle cx="3" cy="12" r="1" fill="currentColor" opacity="0.8" />
-                  <circle cx="2" cy="4" r="1" fill="currentColor" opacity="0.6" />
+                <g style={{ transformOrigin: '9px 9px' }}>
+                  <circle cx="9" cy="1.2" r="1.2" fill="currentColor" opacity="0.95" />
+                  <circle cx="16" cy="6" r="1.75" fill="currentColor" opacity="1" />
+                  <circle cx="13.5" cy="16" r="1.1" fill="currentColor" opacity="0.55" />
+                  <circle cx="4.2" cy="15" r="1.1" fill="currentColor" opacity="0.8" />
+                  <circle cx="3" cy="5" r="1.1" fill="currentColor" opacity="0.65" />
                 </g>
               </motion.svg>
             </div>
-            <span>VUS</span>
+            <span className="text-[1.03em]">vus</span>
           </motion.div>
         </motion.div>
       )}

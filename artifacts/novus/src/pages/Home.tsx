@@ -105,7 +105,7 @@ export function Home() {
             transition={{ duration: 0.8, delay: 0.4, ease: [0.16, 1, 0.3, 1] as [number, number, number, number] }}
             className="flex flex-col sm:flex-row gap-4 sm:gap-6 w-full sm:w-auto px-4 sm:px-0"
           >
-            <Button size="lg" className="w-full sm:w-auto" onClick={() => document.getElementById('contact')?.scrollIntoView({behavior: 'smooth'})}>
+            <Button size="lg" className="w-full sm:w-auto" onClick={() => document.getElementById('contact-form')?.scrollIntoView({behavior: 'smooth'})}>
               Get in Touch <ArrowRight className="ml-2 w-4 h-4 shrink-0" />
             </Button>
             <Button size="lg" variant="outline" className="w-full sm:w-auto" onClick={() => document.getElementById('projects')?.scrollIntoView({behavior: 'smooth'})}>
@@ -171,6 +171,42 @@ export function Home() {
                     </li>
                   ))}
                 </ul>
+              </motion.div>
+            ))}
+          </motion.div>
+        </div>
+      </section>
+
+      {/* HOW WE WORK SECTION */}
+      <section id="how-it-works" className="py-24 sm:py-28 lg:py-32 bg-secondary/10 relative">
+        <div className="max-w-7xl mx-auto px-6 md:px-12">
+          <motion.div {...fadeIn} className="mb-14">
+            <h2 className="text-[1.45rem] sm:text-[1.8rem] md:text-[2.15rem] lg:text-[2.6rem] font-medium tracking-tight mb-6">How We Work</h2>
+          </motion.div>
+
+          <motion.div 
+            variants={staggerContainer} 
+            initial="initial" 
+            whileInView="whileInView" 
+            viewport={{ once: true, margin: "-100px" }}
+            className="grid grid-cols-1 md:grid-cols-5 gap-8"
+          >
+            {[
+              { icon: <Search className="w-5 h-5 text-primary" />, step: "01", title: "Discovery", desc: "Identify bottlenecks and opportunities." },
+              { icon: <ClipboardList className="w-5 h-5 text-primary" />, step: "02", title: "Planning", desc: "Design automation architecture." },
+              { icon: <Hammer className="w-5 h-5 text-primary" />, step: "03", title: "Development", desc: "Build and test workflows." },
+              { icon: <Rocket className="w-5 h-5 text-primary" />, step: "04", title: "Deployment", desc: "Launch and integrate systems." },
+              { icon: <TrendingUp className="w-5 h-5 text-primary" />, step: "05", title: "Optimization", desc: "Monitor and improve performance." },
+            ].map((phase, i) => (
+              <motion.div key={i} variants={staggerItem} className="flex flex-col gap-4">
+                <div className="flex items-center gap-3">
+                  <div className="p-3 bg-background inline-flex rounded-sm border border-white/5">
+                    {phase.icon}
+                  </div>
+                  <span className="font-mono text-xs text-muted-foreground tracking-widest">{phase.step}</span>
+                </div>
+                <h3 className="text-sm sm:text-base font-medium">{phase.title}</h3>
+                <p className="text-muted-foreground text-xs sm:text-[13px] leading-relaxed">{phase.desc}</p>
               </motion.div>
             ))}
           </motion.div>
@@ -252,49 +288,13 @@ export function Home() {
         </div>
       </section>
 
-      {/* PROCESS SECTION */}
-      <section id="process" className="py-24 sm:py-28 lg:py-32 bg-secondary/10 relative">
-        <div className="max-w-7xl mx-auto px-6 md:px-12">
-          <motion.div {...fadeIn} className="mb-14">
-            <h2 className="text-[1.45rem] sm:text-[1.8rem] md:text-[2.15rem] lg:text-[2.6rem] font-medium tracking-tight mb-6">How We Work</h2>
-          </motion.div>
-
-          <motion.div 
-            variants={staggerContainer} 
-            initial="initial" 
-            whileInView="whileInView" 
-            viewport={{ once: true, margin: "-100px" }}
-            className="grid grid-cols-1 md:grid-cols-5 gap-8"
-          >
-            {[
-              { icon: <Search className="w-5 h-5 text-primary" />, step: "01", title: "Discovery", desc: "Identify bottlenecks and opportunities." },
-              { icon: <ClipboardList className="w-5 h-5 text-primary" />, step: "02", title: "Planning", desc: "Design automation architecture." },
-              { icon: <Hammer className="w-5 h-5 text-primary" />, step: "03", title: "Development", desc: "Build and test workflows." },
-              { icon: <Rocket className="w-5 h-5 text-primary" />, step: "04", title: "Deployment", desc: "Launch and integrate systems." },
-              { icon: <TrendingUp className="w-5 h-5 text-primary" />, step: "05", title: "Optimization", desc: "Monitor and improve performance." },
-            ].map((phase, i) => (
-              <motion.div key={i} variants={staggerItem} className="flex flex-col gap-4">
-                <div className="flex items-center gap-3">
-                  <div className="p-3 bg-background inline-flex rounded-sm border border-white/5">
-                    {phase.icon}
-                  </div>
-                  <span className="font-mono text-xs text-muted-foreground tracking-widest">{phase.step}</span>
-                </div>
-                <h3 className="text-sm sm:text-base font-medium">{phase.title}</h3>
-                <p className="text-muted-foreground text-xs sm:text-[13px] leading-relaxed">{phase.desc}</p>
-              </motion.div>
-            ))}
-          </motion.div>
-        </div>
-      </section>
-
       {/* CONTACT SECTION */}
       <section id="contact" className="py-24 sm:py-28 lg:py-32 bg-secondary/10 relative overflow-hidden">
         <ParticleMotif className="bottom-0 left-0 -translate-x-1/3 translate-y-1/3 w-[800px] h-[800px] opacity-5" count={50} />
 
         <div className="max-w-5xl mx-auto px-6 relative z-10">
           <motion.div {...fadeIn} className="mb-16 text-center flex flex-col items-center">
-            <h2 className="text-[1.45rem] sm:text-[1.8rem] md:text-[2.15rem] lg:text-[2.6rem] font-medium tracking-tight mb-6">Let's Automate Your Business</h2>
+            <h2 id="contact-heading" className="text-[1.45rem] sm:text-[1.8rem] md:text-[2.15rem] lg:text-[2.6rem] font-medium tracking-tight mb-6">Let's Automate Your Business</h2>
             <p className="text-muted-foreground font-mono text-xs sm:text-sm max-w-xl uppercase tracking-widest leading-relaxed">
               Ready to eliminate repetitive tasks and scale efficiently?
             </p>
@@ -356,7 +356,7 @@ export function Home() {
                   Tell us about the repetitive work slowing your business down, and our team will outline how to automate it.
                 </p>
 
-                <form onSubmit={handleContactSubmit} className="space-y-6">
+                <form id="contact-form" onSubmit={handleContactSubmit} className="space-y-6">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div className="space-y-2">
                       <label className="text-[11px] font-mono uppercase tracking-widest text-muted-foreground">Name</label>
